@@ -12,7 +12,7 @@ URL（Uniform Resource Locator），统一资源定位符。
 
 在js中，对应关系是这样的：
 
-![image-20181129124929454](/Users/panhui/Library/Application Support/typora-user-images/image-20181129124929454.png)
+![image-20181129124929454](./images/image-20181129124929454.png)
 
 ```javascript
 location.href;
@@ -65,7 +65,7 @@ location.hash; // "#/123"
 
    - 根服务器
 
-     ![image-20181129130526853](/Users/panhui/Library/Application Support/typora-user-images/image-20181129130526853.png)
+     ![image-20181129130526853](./images/image-20181129130526853.png)
 
 
 
@@ -73,15 +73,13 @@ location.hash; // "#/123"
 
 客户端发起 TCP 三次握手，用以同步客户端和服务端的序列号和确认号，并交换 TCP 窗口大小信息。
 
-![image-20181129131558921](/Users/panhui/Library/Application Support/typora-user-images/image-20181129131558921.png)
+![image-20181129131558921](./images/image-20181129131558921.png)
 
 
 
 ### HTTP请求
 
 请求报文主要包括：请求行、请求头和请求体：
-
-![WX20181129-133238@2x](/Users/panhui/Downloads/WX20181129-133238@2x.png)
 
 1. 请求行： 请求方法 URL HTTP协议版本
 
@@ -101,11 +99,11 @@ location.hash; // "#/123"
 
 响应报文主要包括：响应行、响应头和响应体：
 
-![image-20181129135252369](/Users/panhui/Library/Application Support/typora-user-images/image-20181129135252369.png)
+![image-20181129135252369](./images/image-20181129135252369.png)
 
 1. 响应行：协议版本  状态码  状态码描述。
 
-   ![image-20181129135838951](/Users/panhui/Library/Application Support/typora-user-images/image-20181129135838951.png)
+   ![image-20181129135838951](./images/image-20181129135838951.png)
 
 
 2. 响应头：键值对。比如时间、缓存控制、响应类型等等
@@ -117,7 +115,7 @@ location.hash; // "#/123"
 
 浏览器渲染机制：
 
-![image-20181129140113522](/Users/panhui/Library/Application Support/typora-user-images/image-20181129140113522.png)
+![image-20181129140113522](./images/image-20181129140113522.png)
 
 浏览器解析渲染页面分为一下五个步骤：
 
@@ -149,7 +147,7 @@ location.hash; // "#/123"
 
 1. tcp 四次挥手
 
-   ![image-20181129141841418](/Users/panhui/Library/Application Support/typora-user-images/image-20181129141841418.png)
+   ![image-20181129141841418](./images/image-20181129141841418.png)
 
 
 
