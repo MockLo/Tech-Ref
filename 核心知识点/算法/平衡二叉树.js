@@ -1,6 +1,4 @@
 function isBalanceTree(root) {
-  
-
   // 获取节点深度
   const getNodeDeep = n => {
     if (!n) return 0;
