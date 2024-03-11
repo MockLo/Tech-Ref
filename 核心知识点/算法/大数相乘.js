@@ -1,28 +1,23 @@
-function bigMulti(num1, num2) {
-  const lenMax = Math.max(num1.length, num2.length);
+function multiply(num1, num2) {
+  const m = num1.length;
+  const n = num2.length;
+  const res = new Array(m + n).fill(0);
 
-  const pos = new Array(lenMax * 2).fill(0);
-  let posIndex = pos.length - 1;
-
-  for (let i = num2.length - 1; i >= 0; i--) {
+  for (let i = n - 1; i >= 0; i--) {
     const a = +num2[i];
-    for (let j = num1.length - 1; j >= 0; j--) {
+    for (let j = m - 1; j >= 0; j--) {
       const b = +num1[j];
-      const m = a * b + pos[posIndex];
-      pos[posIndex] = m % 10;
-      pos[posIndex - 1] += Math.floor(m / 10);
-      posIndex--;
+
+      const pos = i + j + 1;
+      const multi = a * b + res[pos];
+      res[pos] = multi % 10;
+      res[pos - 1] += Math.floor(multi / 10);
     }
-    posIndex = posIndex + lenMax - 1;
   }
 
-  console.log('pos: ', pos);
-
-  while (pos[0] === 0) {
-    pos.splice(0, 1);
+  while (res[0] === 0) {
+    res.splice(0, 1);
   }
 
-  return pos.join('');
+  return res.length > 0 ? res.join('') : '0';
 }
-
-console.log('bigMulti(123, 45)', bigMulti('123', '45'));
