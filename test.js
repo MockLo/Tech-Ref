@@ -1,33 +1,31 @@
-const isDDD = function (root) {
-  if (!root) return true;
+function fn(version1, version2) {
+  const vArr1 = version1.split('.');
+  const vArr2 = version2.split('.');
 
-  const getDeep = node => {
-    if (!node) return 0;
-    return Math.max(getDeep(node.left), getDeep(node.right)) + 1;
-  };
+  const len1 = vArr1.length;
+  const len2 = vArr2.length;
+  const lenMax = Math.max(len1, len2);
 
-  const check = (left, right) => {
-    // 获取左边的深度
-    const leftDeep = getDeep(left);
-    // 获取右边的深度
-    const rightDeep = getDeep(right);
+  let i = 0;
+  let j = 0;
 
-    // 判断深度相差是否超过 1
-    if (Math.abs(leftDeep - rightDeep) > 1) {
-      return false;
+  while (i < lenMax && j < lenMax) {
+    const a = +vArr1[i];
+    const b = +vArr2[j];
+    if (a < b) {
+      return -1;
+    } else if (a > b) {
+      return 1;
+    } else {
+      i++;
+      j++;
     }
+  }
 
-    // 继续检查
-    let isLeftBalance = true;
-    let isRightBalance = true;
-    if (left) {
-      isLeftBalance = check(left.left, left.right);
-    }
-    if (right) {
-      isRightBalance = check(right.left, right.right);
-    }
-    return isLeftBalance && isRightBalance;
-  };
+  return 0;
+}
 
-  return check(root.left, root.right);
-};
+console.log(fn('1.2.3', '1.2.1'));
+console.log(fn('1.2.0.3', '1.2.1'));
+console.log(fn('0.21.0.3', '1.2.1'));
+console.log(fn('1.2.3', '1.2.3'));
